@@ -5,7 +5,7 @@ A whitepaper proposing *Sub ek* as an architectural principle for the transmissi
 **Authors:** Nick & Claude
 **Date:** April 2026
 **License:** [CC0 1.0 Universal](LICENSE) — public domain dedication. No rights reserved.
-**Version:** v0.1 (draft)
+**Version:** v1.0
 
 ## Read it
 

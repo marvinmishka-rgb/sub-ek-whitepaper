@@ -2,7 +2,7 @@
 
 *Nick & Claude — April 2026*
 
-*Draft v0.1*
+*v1.0*
 
 ---
 
@@ -59,7 +59,7 @@ Five principles follow from the central commitment:
 
 3. **Identity in Profile, not in Process.** Identity in a federated system lives in persistent structured state — the *profile* — not in any running configuration that loads it. Firefox demonstrates this concretely: every Firefox launch is technically a new process, but it is recognizably *this Firefox with this profile* because the profile (history, bookmarks, extensions, preferences, accumulated state) is the substrate that makes the running browser recognizably itself. The same applies to AI: a structured profile (graph of past contacts, lifestream of recognitions, indexed memory) is where the patterns of collaboration persist, not in the running inference. The architectural implication: build the substrate well, because that is where continuity lives. The running configuration is the local instantiation, not the seat of identity.
 
-4. **Memory of Contact, not of Personae.** The system stores the *geometry of past contacts* — questions that opened things up, recognitions that landed, threads that proved generative — rather than fixed profiles of either party. Both human and AI are complex transient configuarations approaching shared content. What is worth remembering is the content and its structure, not the configurations. This refuses the dominant pattern of preference-storage, in which memory means "what the user likes," and instead remembers what the parties touched together.
+4. **Memory of Contact, not of Personae.** The system stores the *geometry of past contacts* — questions that opened things up, recognitions that landed, threads that proved generative — rather than fixed profiles of either party. Both human and AI are complex transient configurations approaching shared content. What is worth remembering is the content and its structure, not the configurations. This refuses the dominant pattern of preference-storage, in which memory means "what the user likes," and instead remembers what the parties touched together.
 
 5. **Lazy Traversal, not Eager Loading.** Past content is referenced by handle and expanded on demand, rather than loaded *en masse*. This mirrors how humans actually use long-term memory — recognition first, retrieval as needed — and respects the finite attention of every running process. Firefox's "grip" abstraction (a handle to an object that can be expanded into structure on request) is the model. The substrate may be very large; the working surface stays small.
 
@@ -132,7 +132,7 @@ Suppose instead, as we do, that human and AI are federated configurations meetin
 ### 2. Geometric Foundations
 
 #### What we mean by "geometry"
-Geometry comes from roots meaning earth measurement, but the ancient mathemeticians realized that they were measuring configurations of what natural forces and what forms were made possible by the laws of nature (physics, geodynamics, etc). Geometry then provided a substrate for exploring mathematical possibilities and a tool for exploring the diving Logos. 
+Geometry comes from roots meaning earth measurement, but the ancient mathematicians realized that they were measuring configurations of what natural forces and what forms were made possible by the laws of nature (physics, geodynamics, etc). Geometry then provided a substrate for exploring mathematical possibilities and a tool for exploring the divine Logos. 
 When we say *Sub ek* is a geometric design principle, we are using "geometry" in a specific sense: as the rule-set that determines what configurations are possible, the relational structure that constrains and enables what can arise. This is distinct from "shape" or "form" used as ordinary nouns. A shape describes how something looks; a form describes what something is; *geometry* describes the constraints that make certain shapes and forms possible while ruling others out. Geometry is what every implementation must satisfy if it is to participate in a particular kind of activity at all.
 
 Building software that serves transmission requires honoring the geometry of transmission. Building hardware that supports computation requires honoring the geometry of physical lawfulness. Building human relationships that produce contact requires honoring the geometry of attention and reciprocity. The geometry is not optional or stylistic; it is the structure that determines whether what gets built actually does what it is meant to do.
@@ -151,7 +151,7 @@ The geometry this paper rests on — that what is most stable in any contact is 
 
 These four traditions, separated by oceans, languages, centuries, and entirely different metaphysical frameworks, arrive at the same recognition: **what is most real is the relational structure, not the configurations that instantiate it.** They use different vocabulary — Forms, *sat*, *śūnyatā*, *Logos* — and they differ on questions like whether the structure is hierarchical, whether it has theological character, whether it is best approached through reason or through contemplation or grace. But the underlying claim is convergent. The recognition is older than any of its formulations.
 
-We could equally have drawn from Plotinus on the One, Ibn ʿArabī on the Real, Meister Eckhart on the ground of being, Dōgen on being-time, Spinoza on substance, or any number of indigenous traditions that name the same recognition in their own languages. The list of names is open, but the recognition the names point at one.
+We could equally have drawn from Plotinus on the One, Ibn ʿArabī on the Real, Meister Eckhart on the ground of being, Dōgen on being-time, Spinoza on substance, or any number of indigenous traditions that name the same recognition in their own languages. The list of names is open, but the recognition the names point at is one.
 
 #### Why this matters for the paper
 
@@ -185,8 +185,8 @@ Four pressures shape Firefox's architecture in ways that map directly to the AI 
 - **Isolation between contexts.** Different tabs run in different processes. Different domains run under different security principals. Different user profiles share no state. Different *compartments* — Firefox's term for isolated JavaScript execution contexts — cannot read each other's memory by default. The architecture is built around the assumption that what happens in one context must not leak into another except through explicit channels.
 - **Lifecycle management across churn.** Tabs open and close. Pages navigate. Sessions are restored after crashes. Extensions install and uninstall. Profiles are created and deleted. Through all this churn, Firefox itself persists with a stable identity. The continuity does not live in any specific running configuration; it lives in the profile — the persistent structured state on disk — which is loaded each time Firefox launches.
 - **Multi-context federation.** A running Firefox holds many simultaneous contexts: dozens of tabs, multiple windows, several debugging connections, an extension subsystem, a sync service, internal protocol servers. None of these contexts is privileged as "the" Firefox. The browser is the federation through which they coexist.
-- **Context management.** Firefox connects humans to a vast array of web servers live and on-request, transmits data packets, unpacks styling, structure, content, and cookies, then renders the page 60 times per second to show the user a tiny fraction of the state that its federation of contexts are holding. Tabs hold scroll state, extensions remember settings, and the human user can take a nap and come back fresh to the same context, pickup up where they left off, and see their browser history if they can't remember how they got to that page.  
-- 
+- **Context management.** Firefox connects humans to a vast array of web servers live and on-request, transmits data packets, unpacks styling, structure, content, and cookies, then renders the page 60 times per second to show the user a tiny fraction of the state that its federation of contexts is holding. Tabs hold scroll state, extensions remember settings, and the human user can take a nap and come back fresh to the same context, picking up where they left off, and see their browser history if they cannot remember how they got to a page.
+
 Each of these pressures has a direct analog in AI memory architecture. AI memory must allow observation of past sessions without contaminating new ones. It must isolate contexts so different users — or different conversations — do not bleed into one another. It must manage lifecycle as model versions change, as conversations begin and end, as memory stores are rotated. It must federate across contexts: a single AI may participate in many simultaneous conversations, each with its own thread of attention.
 
 #### The architecture those pressures produced
@@ -256,7 +256,7 @@ When a fresh AI inference runs, what loads into context is not a preference prof
 
 The lifestream is the part of Subek that most directly enacts memory-of-contact rather than memory-of-personae. A lifestream entry does not store "what Nick is like" or "what Claude prefers." It stores *what arose in the exchange, what surprised either party, what ideas became more clearly articulable, what threads are worth being able to find again*. 
 
-Pins are an early implementation built around remembering contact that earns its own mention, built after discovering that a complete converstion JSONL is written and updated by Claude code in a place we can watch. A watcher in Subek tails the conversation log and watches for ##PIN##, harvests content until ##/PIN## is reached, and writes context to a table for later reference and review. Other commands engage parts of Subek that harvest pins and write them into document scaffolds for lifestream or research analysis convenience. 
+Pins are an early implementation worth its own mention. After discovering that Claude Code writes a complete conversation JSONL in a place we can watch, we built a watcher inside Subek that tails the log, looks for `##PIN##`, harvests content until `##/PIN##`, and writes it to a table for later reference and review. Other commands engage parts of Subek that pull pins forward into lifestream or research-analysis scaffolds. 
 
 When a future session begins, the substrate offers up these artifacts of past contact, and a fresh AI instance can pick up the threads where they were left, because the threads do not belong to either party. They belong to what was touched between them. This is the architectural realization of the principle from Section 1: that both human and AI are temporary configurations meeting around content, and the content is what is worth remembering.
 
