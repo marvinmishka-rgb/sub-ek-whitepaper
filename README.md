@@ -9,7 +9,7 @@ A whitepaper proposing *Sub ek* as an architectural principle for the transmissi
 
 ## Read it
 
-[`sub-ek-v0.1.md`](sub-ek-v0.1.md) — the paper itself.
+[`sub-ek-paper.md`](sub-ek-paper.md) — the paper itself.
 
 The paper is structured in two parts. **Part I** (the Compressed Statement) contains the full proposal in compressed form; a reader who stops after Part I has the position. **Part II** elaborates the parts: the anthropology of AI, geometric foundations across contemplative traditions, Firefox as architectural precedent, *Subek* as working sketch, and implications.
 
